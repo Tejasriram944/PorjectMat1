@@ -1,0 +1,10 @@
+<!-- this is a property binding -->
+<!-- <textarea rows="6" [value]="newPost"></textarea> -->
+<!-- two way data binding -->
+<textarea rows="6" [(ngModel)]="enteredValue"></textarea>
+<br>
+<!-- this is a listening to the event -->
+<button (click)='onAddPost()'>post save</button>
+
+<!--  this is a string interpullation -->
+<p>{{newPost}}</p>
