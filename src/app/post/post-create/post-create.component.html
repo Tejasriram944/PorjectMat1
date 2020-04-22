@@ -3,12 +3,15 @@
 <!-- two way data binding -->
 <mat-card>
   <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
+    <input matInput type="text" [(ngModel)]="enteredTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
   </mat-form-field>
 
   <!-- this is a listening to the event -->
-<button mat-raised-button color='primary' (click)='onAddPost()'>post save</button>
+<button mat-raised-button color='warn' (click)='onAddPost()'>post save</button>
 </mat-card>
 
 <!--  this is a string interpullation -->
-<p>{{newPost}}</p>
+<!-- <p>{{newPost}}</p> -->

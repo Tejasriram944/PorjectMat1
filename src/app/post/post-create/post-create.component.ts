@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { Post } from '../post-model';
 
 @Component({
   selector: 'app-post-create',
@@ -7,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostCreateComponent implements OnInit {
 
-  enteredValue = '';
-  newPost = 'hello world!';
+  enteredTitle = '';
+  enteredContent = '';
+  @Output() postCreated = new EventEmitter<Post>();
 
   constructor() { }
 
@@ -16,7 +19,11 @@ export class PostCreateComponent implements OnInit {
   }
 
   onAddPost() {
-    return this.newPost = this.enteredValue;
+    const post = {
+      title: this.enteredTitle,
+      content: this.enteredContent
+    };
+    this.postCreated.emit(post);
   }
 
 }
