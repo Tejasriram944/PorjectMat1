@@ -1,10 +1,14 @@
 <!-- this is a property binding -->
 <!-- <textarea rows="6" [value]="newPost"></textarea> -->
 <!-- two way data binding -->
-<textarea rows="6" [(ngModel)]="enteredValue"></textarea>
-<br>
-<!-- this is a listening to the event -->
-<button (click)='onAddPost()'>post save</button>
+<mat-card>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
+  </mat-form-field>
+
+  <!-- this is a listening to the event -->
+<button mat-raised-button color='primary' (click)='onAddPost()'>post save</button>
+</mat-card>
 
 <!--  this is a string interpullation -->
 <p>{{newPost}}</p>
