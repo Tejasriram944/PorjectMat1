@@ -11,12 +11,16 @@
 <p>I'm visible because I am open</p>
 </mat-expansion-panel>
 </mat-accordion> -->
-<mat-accordion *ngIf='post.length > 0'>
-  <mat-expansion-panel *ngFor='let tej of post'>
+<mat-accordion multi='true' *ngIf='posts.length > 0'>
+  <mat-expansion-panel *ngFor='let tej of posts'>
     <mat-expansion-panel-header>{{tej.title}}</mat-expansion-panel-header>
     <mat-panel-description>
       {{tej.content}}
     </mat-panel-description>
+    <mat-action-row>
+      <a mat-button color='primary' [routerLink]="['/edit', tej.id]" mat-button>Edit</a>
+      <button mat-button color='warn' (click)="onDelete(tej.id)" mat-button>Delete</button>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-<p class="info-text mat-body-1" *ngIf='post.length <= 0 '>no post is yet</p>
+<p class="info-text mat-body-1" *ngIf='posts.length <= 0 '>no post is yet</p>
